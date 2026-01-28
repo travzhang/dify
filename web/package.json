@@ -161,6 +161,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "7.0.1",
+    "@canyonjs/report": "1.0.3",
     "@chromatic-com/storybook": "5.0.0",
     "@eslint-react/eslint-plugin": "2.7.0",
     "@mdx-js/loader": "3.1.1",
