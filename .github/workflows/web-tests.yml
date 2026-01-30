@@ -52,7 +52,6 @@ jobs:
           instrument-cwd: ${{ github.workspace }}
 
       - name: Upload Coverage Artifact
-        if: steps.coverage-summary.outputs.has_coverage == 'true'
         uses: actions/upload-artifact@v6
         with:
           name: web-coverage-report
