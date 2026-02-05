@@ -2,9 +2,9 @@ name: Web Tests
 
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
 
 concurrency:
   group: web-tests-${{ github.ref || github.run_id }}
@@ -41,11 +41,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Run git-diff
+        run: npx @canyonjs/git-diff
+
       - name: Run tests
         run: pnpm test:coverage
 
       - name: Upload coverage to Canyon
-        uses: canyon-project/canyon-action@v1.0.9
+        uses: canyon-project/canyon-action@v1.0.15
         with:
           coverage-file: web/coverage/coverage-final.json
           canyon-url: https://app.canyonjs.io
