@@ -140,7 +140,7 @@ const SettingsModal: FC<ISettingsModalProps> = ({
   const onHide = () => {
     onClose()
     setTimeout(() => {
-      console.log('???')
+      console.log('???123')
       setIsShowMore(false)
     }, 200)
   }
