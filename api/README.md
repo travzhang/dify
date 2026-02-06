@@ -1,6 +1,6 @@
 # Dify Backend API
 
-## Setup and Run
+## Setup and Run.
 
 > [!IMPORTANT]
 >
