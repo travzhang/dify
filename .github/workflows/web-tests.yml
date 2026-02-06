@@ -58,8 +58,16 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: web-coverage-report
+          path: web/coverage
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Upload Diff Artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: web-diff
           path: |
-            web/coverage
             web/diff.txt
+            web/diff.json
           retention-days: 30
           if-no-files-found: error
